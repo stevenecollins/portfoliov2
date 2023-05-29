@@ -2,7 +2,6 @@
 @use "base" as *;
 
 // NAVIGATION //
-
 // Mobile Styles
 .hamburger {
 	position: relative;
@@ -157,8 +156,6 @@ nav {
 	}
 }
 
-// BUTTONS //
-
 // ICONS //
 .icon {
 	display: inline-block;
@@ -192,4 +189,40 @@ nav {
 .icon-moon {
 	width: 40px;
 	height: 40px;
+}
+
+// BUTTONS //
+.button {
+	font-size: 18px;
+	font-weight: 500;
+	text-decoration: none;
+	background-color: $green;
+	padding: 8px 28px;
+	border: solid 2px $green;
+	border-radius: 5px;
+	transition: transform 0.3s ease-out, background-color 0.3s ease-out,
+		border 0.2s ease-out;
+	transform-origin: center;
+	color: $white;
+	&:hover,
+	&:focus {
+		transform: scale(1.05) rotate(-0.75deg);
+		background-color: $green;
+		border: solid 2px $green;
+	}
+}
+
+.button.outline {
+	border: solid 2px $green;
+	color: $green;
+	background-color: $black-accent;
+	transition: transform 0.3s ease-out, background-color 0.3s ease-out,
+		border 0.2s ease-out;
+	&:hover,
+	&:focus {
+		transform: scale(1.05) rotate(-0.75deg);
+		border: solid 2px $green;
+		background-color: $green;
+		color: $white;
+	}
 }

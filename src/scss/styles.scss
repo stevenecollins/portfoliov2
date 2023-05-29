@@ -3,6 +3,7 @@
 @use "base" as *;
 @use "components" as *;
 @use "home" as *;
+@use "work" as *;
 
 // Dark Mode - Light Mode Toggle
 .theme-icon {
@@ -42,19 +43,16 @@
 
 :root:not(.light) {
 }
-
 :root.light {
 	body {
 		background-color: $bgGray;
 		color: $black-accent;
 	}
-
 	.page {
 		@include breakpoint("tablet") {
 			border: 24px solid $green-border;
 		}
 	}
-
 	header {
 		background-color: $bgGray;
 		@include breakpoint("tablet") {
@@ -75,43 +73,24 @@
 		border-top: solid 0px $green-border;
 		background-color: $green-border;
 	}
-
-	// .button.outline {
-	// 	transition: 0.5s;
-	// 	background-color: $bgGray;
-	// 	border: 2px solid $green;
-	// 	color: $green-dark;
-	// 	-webkit-box-shadow: 1px 1px 10px -5px rgba(68, 77, 50, 0.6);
-	// 	-moz-box-shadow: 1px 1px 10px -5px rgba(68, 77, 50, 0.6);
-	// 	box-shadow: 1px 1px 10px -5px rgba(68, 77, 50, 0.6);
-	// 	&:hover,
-	// 	&:focus {
-	// 		color: $white;
-	// 		background-color: $green;
-	// 		border: 2px solid $green-dark;
-	// 		-webkit-box-shadow: 1px 1px 10px 0px rgba(68, 77, 50, 0.5);
-	// 		-moz-box-shadow: 1px 1px 10px 0px rgba(68, 77, 50, 0.5);
-	// 		box-shadow: 1px 1px 10px 0px rgba(68, 77, 50, 0.5);
-	// 	}
-	// }
-	// .button {
-	// 	transition: 0.5s;
-	// 	-webkit-box-shadow: 1px 1px 10px -5px rgba(68, 77, 50, 0.6);
-	// 	-moz-box-shadow: 1px 1px 10px -5px rgba(68, 77, 50, 0.6);
-	// 	box-shadow: 1px 1px 10px -5px rgba(68, 77, 50, 0.6);
-	// 	border: 2px solid $green;
-	// 	&:hover,
-	// 	&:focus {
-	// 		background-color: $green;
-	// 		border: 2px solid $green-dark;
-	// 		-webkit-box-shadow: 1px 1px 10px 0px rgba(68, 77, 50, 0.5);
-	// 		-moz-box-shadow: 1px 1px 10px 0px rgba(68, 77, 50, 0.5);
-	// 		box-shadow: 1px 1px 10px 0px rgba(68, 77, 50, 0.5);
-	// 	}
-	// }
-	// .mobile-name {
-	// 	color: $white;
-	// }
+	.button {
+		&:hover,
+		&:focus {
+			-webkit-box-shadow: 1px 1px 10px 0px rgba(68, 77, 50, 0.25);
+			-moz-box-shadow: 1px 1px 10px 0px rgba(68, 77, 50, 0.25);
+			box-shadow: 1px 1px 10px 0px rgba(68, 77, 50, 0.25);
+		}
+	}
+	.button.outline {
+		background-color: $bgGray;
+		&:hover,
+		&:focus {
+			background-color: $green;
+			-webkit-box-shadow: 1px 1px 5px 0px rgba(68, 77, 50, 0.25);
+			-moz-box-shadow: 1px 1px 5px 0px rgba(68, 77, 50, 0.25);
+			box-shadow: 1px 1px 5px 0px rgba(68, 77, 50, 0.25);
+		}
+	}
 	.hamburger {
 		background-color: $green-border;
 		.bar,
@@ -120,7 +99,6 @@
 			background-color: $black-accent;
 		}
 	}
-
 	.icon-linkedin,
 	.icon-github,
 	.icon-codepen,

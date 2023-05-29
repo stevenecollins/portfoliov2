@@ -105,6 +105,26 @@ header.header-mobile {
 	}
 }
 
+// Links //
+[id="home"] .home,
+[id="work"] .work,
+[id="about"] .about,
+[id="contact"] .contact,
+[id="resume"] .resume {
+	color: $white;
+	background-color: $green;
+	border-radius: 4px;
+}
+// Top Spacing
+#about,
+#contact,
+#work,
+#resume {
+	main {
+		margin-top: 100px;
+	}
+}
+
 main {
 	flex-grow: 1;
 	padding: 24px;

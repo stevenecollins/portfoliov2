@@ -1,4 +1,78 @@
 @use "abstracts" as *;
 @use "base" as *;
+@use "components" as *;
 
 // HOME //
+#home header .brand-wrapper .brand {
+	visibility: hidden;
+}
+#home header.header-mobile .brand-wrapper .brand {
+	visibility: visible;
+}
+
+#home {
+}
+
+#home main {
+	display: flex;
+}
+
+.welcome-wrapper {
+	width: 100%;
+	max-width: 660px;
+	padding: 0px 20px;
+	text-align: center;
+	@include breakpoint("tablet") {
+		display: flex;
+		justify-content: space-between;
+		text-align: left;
+		max-width: 660px;
+	}
+	margin: auto;
+	.avatar {
+		height: 185px;
+		width: 100%;
+		max-width: 168px;
+		background-image: url("./../assets/meAvatar.png");
+		background-size: cover;
+		background-position: 0px, 0px;
+		margin: 0px auto;
+		overflow: hidden;
+		align-self: center;
+	}
+	.intro {
+		margin-bottom: 1px;
+	}
+	.myName {
+		font-weight: 900;
+		font-size: 38px;
+		line-height: 38px;
+	}
+	.message {
+		margin-top: 5px;
+		margin-bottom: 15px;
+	}
+	.button-wrapper {
+		display: flex;
+		justify-content: space-between;
+		max-width: 310px;
+		margin: 21px auto 0px;
+		@include breakpoint("tablet") {
+			margin: 12px 0px 0px;
+		}
+	}
+}
+
+// Avatar Postions
+// .blink {
+// 	background-position: -165px, 0px;
+// }
+// .lookUp {
+// }
+// .lookRight {
+// }
+// .lookDown {
+// 	background-position: -425px, 0px;
+// }
+// .lookLeft {
+// }
