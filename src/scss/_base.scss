@@ -1,0 +1,179 @@
+@use "abstracts" as *;
+
+// GENERAL STYLES //
+body {
+	margin: 0;
+	padding: 0px;
+	box-sizing: border-box;
+	background-color: $black-accent;
+	font-family: $content;
+	color: $white;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	@include breakpoint("tablet") {
+		border: 24px solid $black;
+	}
+}
+
+header {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 99;
+	background-color: $black-accent;
+	@include breakpoint("tablet") {
+		border-top: solid 24px $black;
+		border-left: solid 24px $black;
+		border-right: solid 24px $black;
+	}
+	@include breakpoint("desktop") {
+		justify-content: space-between;
+	}
+	&.is-scrolling {
+		border-top: solid 0px $black;
+		background-color: $black;
+		box-shadow: $black 0px 0px 20px 0px;
+		transition: 0.4s ease-in;
+	}
+	.brand-wrapper {
+		display: flex;
+		a {
+			color: $white;
+			text-decoration: none;
+		}
+		.brand {
+			display: flex;
+			align-items: flex-start;
+			padding: 14px 12px;
+			@include breakpoint("mobile-plus") {
+				padding: 14px 16px 12px;
+			}
+			@include breakpoint("tablet") {
+				padding: 16px 20px 12px;
+			}
+			@include breakpoint("desktop") {
+				padding: 20px 24px 12px;
+			}
+
+			.avatarSmall {
+				position: absolute;
+				height: 50px;
+				@include breakpoint("mobile-plus") {
+					height: 66px;
+				}
+				@include breakpoint("tablet") {
+					height: 72px;
+				}
+				@include breakpoint("desktop") {
+					height: 84px;
+				}
+			}
+			h2 {
+				font-family: $title;
+				font-size: 21px;
+				line-height: 21px;
+				padding: 2px 0px 0px 54px;
+				@include breakpoint("mobile-plus") {
+					padding: 4px 0px 0px 64px;
+				}
+				@include breakpoint("tablet") {
+					padding: 5px 0px 0px 70px;
+				}
+				@include breakpoint("desktop") {
+					padding: 6px 0px 0px 80px;
+				}
+				span {
+					font-family: $content;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}
+header.header-mobile {
+	transition: 0.4s;
+	border-top: solid 0px $black;
+	background-color: $black;
+	@include breakpoint("laptop") {
+		transition: 0.7s;
+	}
+}
+
+main {
+	flex-grow: 1;
+	padding: 24px;
+	padding-top: 90px;
+	// transition: 0s;
+}
+
+footer {
+	padding: 24px;
+	@include breakpoint("tablet") {
+		padding: 24px 24px 14px 24px;
+	}
+
+	.footer-wrapper {
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+		flex-direction: column;
+		align-items: center;
+		@include breakpoint("tablet") {
+			flex-direction: row;
+		}
+		.socialmedia-wrapper {
+			display: flex;
+			@include breakpoint("tablet") {
+				align-self: flex-end;
+				margin-bottom: 0px;
+			}
+			a {
+				padding: 0px 10px 8px;
+				text-decoration: none;
+				@include breakpoint("tablet") {
+					padding: 0px 24px 0px 0px;
+				}
+			}
+		}
+	}
+	.heart-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		// font-size: 12px;
+		font-weight: 500;
+		.heartbeat-icon {
+			animation: heartbeat 1s infinite;
+			color: $red;
+			font-size: 24px;
+			margin-top: 3px;
+		}
+		@keyframes heartbeat {
+			0% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.2);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+		.footer-text {
+			margin-right: 3px;
+			font-size: 14px;
+			@include breakpoint("laptop") {
+				font-size: 16px;
+				margin-right: 5px;
+			}
+		}
+	}
+}

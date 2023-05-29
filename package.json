@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "description": "My Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "author": "Steven",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "@11tyrocks/eleventy-plugin-sass-lightningcss": "^1.0.2"
+  },
+  "browserslist": [
+    "> 0.2%",
+    "not dead"
+  ]
+}

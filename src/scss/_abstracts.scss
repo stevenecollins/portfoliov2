@@ -1,0 +1,42 @@
+// COLORS //
+$black: #232323;
+$black-accent: #323232;
+$black-10: #e9e9e9;
+$blue: #3c8ebd;
+$blue-accent: #8ab8d3;
+$blue-dark: #005f8a;
+$gray: #f4f4f4;
+$bgGray: #eeeeee;
+$green: #92c53f;
+$green-dark: #6b9428;
+$green-border: #8eb54f;
+$green-90: #f4f9eb;
+$green-accent: #deedc5;
+$red: #d33f3c;
+$white: #ffffff;
+$yellow: #f89c31;
+$yellow-lite: #f6c11f;
+
+// FONTS //
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Work+Sans:wght@100;300;400;500;700;800;900&display=swap");
+$title: "Montserrat", sans-serif;
+$content: "Work Sans", sans-serif;
+
+// BREAKPOINTS //
+$breakpoints: (
+	"mobile": 360px,
+	"mobile-plus": 520px,
+	"tablet": 768px,
+	"laptop": 960px,
+	"desktop": 1024px,
+	"large-desktop": 1440px,
+);
+@mixin breakpoint($name) {
+	@if map-has-key($breakpoints, $name) {
+		@media (min-width: map-get($breakpoints, $name)) {
+			@content;
+		}
+	} @else {
+		@warn "The key '#{$name}' was not found in $breakpoints map. Please add it to the map for using this mixin.";
+	}
+}

@@ -1,0 +1,35 @@
+<header>
+	<div class="brand-wrapper">
+		<a href="/">
+			<div class="brand">
+				<img
+					src="./assets/smallerAvatar.png"
+					class="avatarSmall"
+					alt="Steven's Avatar"
+				/>
+				<h2>
+					Steven E Collins<br />
+					<span>Product Designer & UI Dev</span>
+				</h2>
+			</div>
+		</a>
+	</div>
+	<nav>
+		<a href="" class="work">Work</a>
+		<a href="" class="about">About Me</a>
+		<a href="" class="contact">Contact</a>
+		<a href="" class="resume">ResumÉ</a>
+		{% include 'theme-switch.njk' %}
+	</nav>
+	<button class="hamburger">
+		<div class="bar"></div>
+	</button>
+</header>
+
+<nav class="mobile-nav">
+	<a href="/" class="home">Home</a>
+	<a href="" class="work">Work</a>
+	<a href="" class="about">About Me</a>
+	<a href="" class="contact">Contact</a>
+	<a href="" class="resume">ResumÉ</a>
+</nav>

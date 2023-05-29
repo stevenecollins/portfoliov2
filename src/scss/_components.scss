@@ -1,0 +1,195 @@
+@use "abstracts" as *;
+@use "base" as *;
+
+// NAVIGATION //
+
+// Mobile Styles
+.hamburger {
+	position: relative;
+	display: block;
+	width: 35px;
+	cursor: pointer;
+	appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 3px;
+	background-color: $white;
+	margin: 7px 0px;
+	transition: 0.4s;
+	border-radius: 5px;
+}
+
+.hamburger.is-active:before {
+	transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger.is-active:after {
+	transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.hamburger.is-active .bar {
+	opacity: 0;
+}
+
+button.hamburger {
+	transition: 0.6s;
+	background-color: $black;
+	padding: 17px 20px;
+	width: 74px;
+	height: 74px;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	border-bottom-left-radius: 8px;
+	@include breakpoint("desktop") {
+		display: none;
+	}
+}
+button.hamburger.is-active {
+	transition: 0.4s ease-in-out;
+	background-color: $black;
+	border-bottom-left-radius: 0px;
+	padding: 20px 10px;
+}
+
+.mobile-nav {
+	z-index: 98;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: $black;
+	opacity: 0; // Start as invisible
+	transform: translateY(100%); // Start off screen to the bottom
+	transition: transform 0.4s, opacity 0.4s; // Animate transform and opacity
+	font-family: $content;
+	padding-top: 102px;
+	@include breakpoint("desktop") {
+		display: none;
+	}
+	@include breakpoint("tablet") {
+		padding-top: 112px;
+	}
+}
+.mobile-nav.show {
+	opacity: 1; // Fully visible
+	transform: translateY(0); // Move to original position
+}
+
+.mobile-nav.is-active {
+	left: 0;
+}
+// Mobile Menu Links
+.mobile-nav a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 220px;
+	font-size: 32px;
+	height: 54px;
+	text-decoration: none;
+	color: $white;
+	border-radius: 10px;
+	font-weight: 600;
+	text-transform: uppercase;
+	background-color: $black;
+	@include breakpoint("mobile-plus") {
+		background-color: $black-accent;
+		font-size: 32px;
+		height: 74px;
+	}
+	@include breakpoint("tablet") {
+		font-size: 42px;
+		height: 84px;
+		margin-bottom: 8px;
+		max-width: 260px;
+	}
+	@include breakpoint("tablet") {
+		font-size: 42px;
+		height: 84px;
+		margin-bottom: 16px;
+		max-width: 300px;
+	}
+}
+
+.mobile-nav a:hover {
+	background-color: $green;
+}
+
+nav {
+	display: none;
+	grid-gap: 24px;
+	grid-template-columns: repeat(5, auto);
+	font-family: "Work Sans", sans-serif;
+	font-weight: 500;
+	line-height: 24px;
+	align-items: center;
+	@include breakpoint("desktop") {
+		display: grid;
+		grid-gap: 24px;
+		grid-template-columns: repeat(5, auto);
+	}
+	a {
+		color: inherit;
+		font-size: 18px;
+		text-decoration: none;
+		padding: 8px 16px;
+		text-transform: uppercase;
+		transition: 0.25s;
+	}
+	a:hover {
+		color: $white;
+		background-color: $green;
+		border-radius: 4px;
+	}
+}
+
+// BUTTONS //
+
+// ICONS //
+.icon {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
+}
+.icon-linkedin,
+.icon-github,
+.icon-codepen,
+.icon-dribbble {
+	color: $white;
+	width: 32px;
+	height: 32px;
+	transition: transform 0.4s ease-out;
+	&:hover,
+	&:focus {
+		transform: scale(1.35);
+	}
+}
+
+.icon-heart {
+	width: 18px;
+	height: 18px;
+	color: transparent;
+}
+
+.icon-sun,
+.icon-moon {
+	width: 40px;
+	height: 40px;
+}
