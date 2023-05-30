@@ -3,7 +3,10 @@ let avatar = document.querySelector(".avatar");
 var closeEyes = document.querySelector(".close");
 let LDL = document.querySelector(".lookDownLeft");
 let LURs = document.querySelectorAll(".lookUpRight, .hamburger");
+let LR = document.querySelector('.lookRight');
 let LDR = document.querySelector('.lookDownRight');
+let wink = document.querySelector(".wink");
+let suprise = document.querySelector(".theme-icon");
 
 let isHovering = false; // Introduce a flag to keep track of hovering state
 
@@ -27,6 +30,15 @@ LURs.forEach((LUR) => {
         isHovering = false; // set hovering to false when mouse leaves
     });
 });
+// lookRight
+LR.addEventListener("mouseenter", () => {
+	avatar.style.backgroundPosition = "-1113px 0px";
+	isHovering = true; // set hovering to true when mouse enters
+});
+LR.addEventListener("mouseleave", () => {
+	avatar.style.backgroundPosition = "0px 0px";
+	isHovering = false; // set hovering to false when mouse leaves
+});
 // lookDownRight
 LDR.addEventListener("mouseenter", () => {
 	avatar.style.backgroundPosition = "-1272px 0px";
@@ -36,6 +48,25 @@ LDR.addEventListener("mouseleave", () => {
 	avatar.style.backgroundPosition = "0px 0px";
 	isHovering = false; // set hovering to false when mouse leaves
 });
+// wink
+wink.addEventListener("mouseenter", () => {
+	avatar.style.backgroundPosition = "-1590px 0px";
+	isHovering = true; // set hovering to true when mouse enters
+});
+wink.addEventListener("mouseleave", () => {
+	avatar.style.backgroundPosition = "0px 0px";
+	isHovering = false; // set hovering to false when mouse leaves
+});
+// suprise
+suprise.addEventListener("mouseenter", () => {
+	avatar.style.backgroundPosition = "-1749px 0px";
+	isHovering = true; // set hovering to true when mouse enters
+});
+suprise.addEventListener("mouseleave", () => {
+	avatar.style.backgroundPosition = "0px 0px";
+	isHovering = false; // set hovering to false when mouse leaves
+});
+
 
 // Start Blinking
 window.onload = startFunc;
