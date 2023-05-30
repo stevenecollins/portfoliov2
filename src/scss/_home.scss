@@ -3,10 +3,10 @@
 @use "components" as *;
 
 // HOME //
-#home header .brand-wrapper .brand {
+#home header .brand-wrapper {
 	visibility: hidden;
 }
-#home header.header-mobile .brand-wrapper .brand {
+#home header.header-mobile .brand-wrapper {
 	visibility: visible;
 }
 
@@ -32,8 +32,9 @@
 	.avatar {
 		height: 185px;
 		width: 100%;
-		max-width: 168px;
-		background-image: url("./../assets/meAvatar.png");
+		max-width: 166px;
+		background-image: url("./../assets/homeAvatar2.svg");
+		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: 0px, 0px;
 		margin: 0px auto;
