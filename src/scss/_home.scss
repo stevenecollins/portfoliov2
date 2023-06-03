@@ -15,31 +15,32 @@
 
 #home main {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .welcome-wrapper {
 	width: 100%;
 	max-width: 660px;
-	padding: 0px 20px;
+	padding: 100px 24px 20;
 	text-align: center;
 	@include breakpoint("tablet") {
+		padding: 0px 24px;
 		display: flex;
 		justify-content: space-between;
 		text-align: left;
-		max-width: 660px;
 	}
-	margin: auto;
 	.avatar {
 		height: 185px;
 		width: 100%;
-		max-width: 166px;
+		max-width: 165px;
 		background-image: url("./../assets/homeAvatar.svg");
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: 0px, 0px;
 		margin: 0px auto;
 		overflow: hidden;
-		align-self: center;
+		// align-self: center;
 	}
 	.intro {
 		margin-bottom: 1px;
@@ -63,17 +64,3 @@
 		}
 	}
 }
-
-// Avatar Postions
-// .blink {
-// 	background-position: -165px, 0px;
-// }
-// .lookUp {
-// }
-// .lookRight {
-// }
-// .lookDown {
-// 	background-position: -425px, 0px;
-// }
-// .lookLeft {
-// }

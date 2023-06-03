@@ -1,0 +1,91 @@
+@use "abstracts" as *;
+@use "base" as *;
+@use "components" as *;
+
+#resume {
+	.resume-wrapper {
+		max-width: 960px;
+		margin: auto;
+	}
+	.headline {
+		padding: 8px 24px 8px;
+		@include breakpoint("mobile-plus") {
+			padding: 16px 32px 8px;
+		}
+		@include breakpoint("tablet") {
+			padding: 30px 32px 24px;
+		}
+		@include breakpoint("laptop") {
+			padding: 60px 32px 32px;
+		}
+		h1 {
+			font-family: "Montserrat", sans-serif;
+			font-size: 32px;
+			font-weight: 900;
+			color: $white;
+			display: none;
+			@include breakpoint("tablet") {
+				display: initial;
+				font-size: 42px;
+			}
+		}
+		h2 {
+			font-family: "Montserrat", sans-serif;
+			font-size: 42px;
+			line-height: 48px;
+			font-weight: 900;
+			color: $blue;
+			margin-bottom: 16px;
+			width: 360px;
+			@include breakpoint("tablet") {
+				width: initial;
+			}
+			span {
+				display: none;
+				@include breakpoint("tablet") {
+					display: initial;
+				}
+			}
+		}
+	}
+	.content {
+		padding: 0px 24px;
+		@include breakpoint("mobile-plus") {
+			padding: 0px 32px;
+		}
+		@include breakpoint("laptop") {
+			padding: 0px 80px 60px;
+		}
+		.button-wrapper {
+			display: flex;
+			flex-direction: column;
+			margin: 8px auto;
+			@include breakpoint("tablet") {
+				flex-direction: row;
+				gap: 32px;
+				margin: 16px auto;
+			}
+
+			.button {
+				margin-bottom: 16px;
+				max-width: 290px;
+			}
+		}
+		p {
+			padding-bottom: 16px;
+			max-width: 680px;
+			@include breakpoint("mobile-plus") {
+				font-size: 21px;
+			}
+			a {
+				color: $blue;
+				font-size: 22px;
+				font-weight: bold;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

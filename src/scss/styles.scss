@@ -4,6 +4,8 @@
 @use "components" as *;
 @use "home" as *;
 @use "work" as *;
+@use "resume" as *;
+@use "404error" as *;
 
 // Dark Mode - Light Mode Toggle
 .theme-icon {
@@ -104,5 +106,13 @@
 	.icon-codepen,
 	.icon-dribbble {
 		color: $black-accent;
+	}
+
+	#resume {
+		.resume-wrapper {
+			h1 {
+				color: $black;
+			}
+		}
 	}
 }
