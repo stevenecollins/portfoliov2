@@ -108,11 +108,15 @@
 		color: $black-accent;
 	}
 
-	#resume {
-		.resume-wrapper {
-			h1 {
-				color: $black;
-			}
+	.resume-wrapper,
+	.work-wrapper {
+		h1,
+		h2 {
+			color: $black;
+		}
+		.button {
+			background-color: $green;
+			color: $white;
 		}
 	}
 }

@@ -3,64 +3,88 @@
 @use "components" as *;
 
 #resume {
-	.resume-wrapper {
-		max-width: 960px;
-		margin: auto;
-	}
-	.headline {
-		padding: 8px 24px 8px;
+	main {
+		// 	padding: 8px 24px;
+		// 	@include breakpoint("mobile-plus") {
+		// 		padding: 24px 42px 0px;
+		// 	}
+		// 	@include breakpoint("tablet") {
+		// 		padding: 24px 74px 0px;
+		// 	}
+		// 	@include breakpoint("laptop") {
+		// 		padding: 42px 74px 0px;
+		// 	}
+		// }
+		padding: 8px 24px;
 		@include breakpoint("mobile-plus") {
-			padding: 16px 32px 8px;
+			padding: 24px 42px 0px;
 		}
 		@include breakpoint("tablet") {
-			padding: 30px 32px 24px;
+			padding: 24px 74px 0px;
+		}
+		@include breakpoint("tablet") {
+			padding: 24px 74px 0px;
 		}
 		@include breakpoint("laptop") {
-			padding: 60px 32px 32px;
+			padding: 42px 74px 0px;
 		}
+		@include breakpoint("desktop") {
+			padding: 52px 74px 0px;
+		}
+	}
+}
+.resume-wrapper {
+	max-width: 1280px;
+	margin: auto;
+
+	.pageTitle {
 		h1 {
 			font-family: "Montserrat", sans-serif;
-			font-size: 32px;
+			font-size: 36px;
+			line-height: 44px;
 			font-weight: 900;
 			color: $white;
-			display: none;
-			@include breakpoint("tablet") {
-				display: initial;
+			margin-bottom: 30px;
+			@include breakpoint("mobile-plus") {
 				font-size: 42px;
+				line-height: 52px;
+			}
+			@include breakpoint("tablet") {
+				font-size: 56px;
+				line-height: 68px;
+			}
+			@include breakpoint("laptop") {
+				font-size: 42px;
+				line-height: 52px;
+			}
+			@include breakpoint("large-desktop") {
+				font-size: 56px;
+				line-height: 68px;
 			}
 		}
-		h2 {
-			font-family: "Montserrat", sans-serif;
-			font-size: 42px;
-			line-height: 48px;
-			font-weight: 900;
-			color: $blue;
-			margin-bottom: 16px;
-			width: 360px;
-			@include breakpoint("tablet") {
-				width: initial;
-			}
-			span {
+		.mobile-group {
+			@include breakpoint("laptop") {
 				display: none;
-				@include breakpoint("tablet") {
-					display: initial;
-				}
 			}
+		}
+		.desktop-group {
+			display: none;
+			@include breakpoint("laptop") {
+				display: block;
+			}
+		}
+		.blue {
+			color: $blue;
 		}
 	}
 	.content {
-		padding: 0px 24px;
-		@include breakpoint("mobile-plus") {
-			padding: 0px 32px;
-		}
-		@include breakpoint("laptop") {
-			padding: 0px 80px 60px;
-		}
+		max-width: 1024px;
+		margin: 0px auto;
 		.button-wrapper {
 			display: flex;
 			flex-direction: column;
 			margin: 8px auto;
-			@include breakpoint("tablet") {
+			@include breakpoint("laptop") {
 				flex-direction: row;
 				gap: 32px;
 				margin: 16px auto;
@@ -68,7 +92,8 @@
 
 			.button {
 				margin-bottom: 16px;
-				max-width: 290px;
+				text-transform: uppercase;
+				text-align: center;
 			}
 		}
 		p {

@@ -3,55 +3,182 @@
 @use "components" as *;
 
 // Main Portfolio Page
+
+#work main {
+	padding: 8px 24px;
+	@include breakpoint("mobile-plus") {
+		padding: 24px 42px 0px;
+	}
+	@include breakpoint("tablet") {
+		padding: 24px 74px 0px;
+	}
+	@include breakpoint("tablet") {
+		padding: 24px 74px 0px;
+	}
+	@include breakpoint("laptop") {
+		padding: 42px 74px 0px;
+	}
+	@include breakpoint("desktop") {
+		padding: 52px 74px 0px;
+	}
+}
+.work-wrapper {
+	max-width: 1280px;
+	margin: auto;
+}
 .pageTitle {
 	h1 {
+		max-width: 360px;
 		font-family: "Montserrat", sans-serif;
 		font-size: 36px;
+		line-height: 44px;
 		font-weight: 900;
 		color: $white;
-		span {
-			color: $blue-dark;
+		margin-bottom: 60px;
+		@include breakpoint("mobile-plus") {
+			max-width: 420px;
+			font-size: 42px;
+			line-height: 52px;
+		}
+		@include breakpoint("tablet") {
+			max-width: 520px;
+			font-size: 56px;
+			line-height: 68px;
+		}
+		@include breakpoint("laptop") {
+			max-width: initial;
+			font-size: 42px;
+			line-height: 52px;
+		}
+		@include breakpoint("large-desktop") {
+			max-width: initial;
+			font-size: 56px;
+			line-height: 68px;
 		}
 	}
-	margin-bottom: 60px;
+	.blue {
+		color: $blue;
+	}
 }
-
 .workItemGrp {
-	padding: 20px;
+	margin-bottom: 60px;
+	@include breakpoint("mobile-plus") {
+		margin-bottom: 74px;
+	}
+	@include breakpoint("laptop") {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 84px;
+	}
+	@include breakpoint("large-desktop") {
+		max-width: 1280px;
+		margin-bottom: 92px;
+	}
+	.content {
+		display: flex;
+		flex-direction: column;
+		@include breakpoint("laptop") {
+			max-width: 300px;
+			padding-right: 16px;
+			margin-right: 16px;
+		}
+		@include breakpoint("desktop") {
+			max-width: 400px;
+		}
+		@include breakpoint("large-desktop") {
+			max-width: 460px;
+		}
+	}
 	h2 {
 		font-family: "Montserrat", sans-serif;
 		font-size: 24px;
 		font-weight: 900;
 		color: $white;
-	}
-	h3 {
-		font-family: "Work Sans", sans-serif;
-		font-size: 18px;
-		font-weight: 200;
+		@include breakpoint("mobile-plus") {
+			font-size: 36px;
+		}
+		@include breakpoint("laptop") {
+			font-size: 32px;
+		}
+		@include breakpoint("desktop") {
+			font-size: 32px;
+		}
+		@include breakpoint("large-desktop") {
+			font-size: 42px;
+		}
 	}
 	p {
 		font-family: "Work Sans", sans-serif;
 		font-size: 16px;
 		line-height: 24px;
+		padding: 0px 0px 16px;
+
+		@include breakpoint("tablet") {
+			font-size: 21px;
+			line-height: 30px;
+			padding: 0px 0px 24px;
+		}
+		@include breakpoint("laptop") {
+			font-size: 16px;
+			line-height: 24px;
+			padding: 0px 0px 24px;
+		}
+		@include breakpoint("desktop") {
+			font-size: 18px;
+			line-height: 28px;
+			padding: 4px 0px 28px;
+		}
+		@include breakpoint("large-desktop") {
+			font-size: 21px;
+			line-height: 32px;
+			padding: 8px 0px 32px;
+		}
 	}
-	.workImage {
+	.workImage,
+	.imageItem {
 		width: 100%;
 		margin: 16px 0px;
+		@include breakpoint("laptop") {
+			margin: 0px;
+		}
 	}
-	button.last {
+	// Mobile Image
+	.imageItem {
+		@include breakpoint("laptop") {
+			display: none;
+		}
+	}
+	// Image above 768
+	.workImage {
+		display: none;
+		@include breakpoint("laptop") {
+			display: initial;
+		}
+		@include breakpoint("large-desktop") {
+			max-width: 630px;
+		}
+	}
+	.button {
 		background-color: transparent;
-		color: $white;
-		border: solid 1px $white;
-		height: 50px;
-		border-radius: 5px;
-		width: 100%;
-		font-size: 18px;
 		text-transform: uppercase;
-		font-weight: 600;
-		margin-top: 24px;
-		margin-bottom: 60px;
+		text-align: center;
+		@include breakpoint("mobile-plus") {
+			max-width: 300px;
+		}
 	}
 }
 
-#work {
+.workItemGrp.switch {
+	@include breakpoint("laptop") {
+		flex-direction: row-reverse;
+	}
+	.content {
+		@include breakpoint("laptop") {
+			padding-right: 0px;
+			margin-right: 0px;
+			padding-left: 16px;
+			margin-left: 32px;
+		}
+	}
 }

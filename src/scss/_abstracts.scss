@@ -29,7 +29,7 @@ $breakpoints: (
 	"tablet": 768px,
 	"laptop": 960px,
 	"desktop": 1024px,
-	"large-desktop": 1440px,
+	"large-desktop": 1280px,
 );
 @mixin breakpoint($name) {
 	@if map-has-key($breakpoints, $name) {
