@@ -62,5 +62,10 @@
 		@include breakpoint("tablet") {
 			margin: 12px 0px 0px;
 		}
+		.button {
+			width: 100%;
+			max-width: 142px;
+			text-align: center;
+		}
 	}
 }

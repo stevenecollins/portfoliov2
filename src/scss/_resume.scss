@@ -4,17 +4,6 @@
 
 #resume {
 	main {
-		// 	padding: 8px 24px;
-		// 	@include breakpoint("mobile-plus") {
-		// 		padding: 24px 42px 0px;
-		// 	}
-		// 	@include breakpoint("tablet") {
-		// 		padding: 24px 74px 0px;
-		// 	}
-		// 	@include breakpoint("laptop") {
-		// 		padding: 42px 74px 0px;
-		// 	}
-		// }
 		padding: 8px 24px;
 		@include breakpoint("mobile-plus") {
 			padding: 24px 42px 0px;
@@ -79,7 +68,7 @@
 	}
 	.content {
 		max-width: 1024px;
-		margin: 0px auto;
+		// margin: 0px auto;
 		.button-wrapper {
 			display: flex;
 			flex-direction: column;
