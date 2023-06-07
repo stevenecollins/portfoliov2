@@ -1,0 +1,6 @@
+{
+  "cody.debug.enable": true,
+  "cody.experimental.suggestions": true,
+  "cody.experimental.inline": true,
+  "cody.debug.verbose": true
+}

@@ -3,26 +3,87 @@
 @use "components" as *;
 
 #workItem {
-	main {
-		// padding: 8px 24px;
-		// @include breakpoint("mobile-plus") {
-		// 	padding: 24px 42px 0px;
-		// }
-		// @include breakpoint("tablet") {
-		// 	padding: 24px 74px 0px;
-		// }
-		// @include breakpoint("tablet") {
-		// 	padding: 24px 74px 0px;
-		// }
-		// @include breakpoint("laptop") {
-		// 	padding: 42px 74px 0px;
-		// }
-		// @include breakpoint("desktop") {
-		// 	padding: 52px 74px 0px;
-		// }
+	.work-item-wrapper {
+		padding: 8px 24px;
+		max-width: 1280px;
+		margin: auto;
+		@include breakpoint("mobile-plus") {
+			padding: 24px 42px 0px;
+		}
 	}
-}
-.work-item-wrapper {
-	max-width: 1280px;
-	margin: auto;
+	.hero-image {
+		margin-bottom: 30px;
+	}
+	.content {
+		max-width: 640px;
+		margin: 0px auto;
+		h3 {
+			font-size: 21px;
+			font-weight: 700;
+			margin-bottom: 8px;
+		}
+		span {
+			color: $blue;
+			font-size: 28px;
+			font-weight: 900;
+			letter-spacing: 0.5px;
+		}
+		p {
+			font-size: 16px;
+			line-height: 28px;
+			margin-bottom: 32px;
+			strong {
+				font-weight: bold;
+				font-style: italic;
+			}
+		}
+		h4 {
+			font-weight: bold;
+			font-size: 21pxs;
+		}
+		li {
+			position: relative;
+			padding: 12px 0px 12px 28px;
+			font-style: italic;
+			span {
+				position: absolute;
+				top: 3px;
+				left: -2px;
+				font-style: normal;
+			}
+			&:last-child {
+				margin-bottom: 30px;
+			}
+		}
+	}
+	.quote-wrapper {
+		max-width: 740px;
+		margin: 16px auto 42px;
+	}
+
+	.persona-image {
+		margin: 0px auto;
+		padding: 8px 0px 24px;
+		@include breakpoint("tablet") {
+			max-width: 600px;
+		}
+	}
+	.lucidshart-image {
+		margin: 0px auto;
+		padding: 8px 0px 42px;
+		max-width: 840px;
+	}
+
+	.low-fidelity-image {
+		margin: 0px auto;
+		padding: 8px 0px 42px;
+	}
+
+	.final-design-image {
+		margin: 0px auto;
+		padding: 0px 0px 42px;
+	}
+	.design-paragraph p {
+		margin-bottom: 0px;
+	}
 }

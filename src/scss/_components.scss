@@ -226,3 +226,79 @@ nav {
 		color: $white;
 	}
 }
+
+// Quote Cards
+$default: #fff;
+$defaultTextColor: #222222;
+$defaultSecondaryTextColor: #eee;
+$border-radius: 4px;
+
+$yellow: #f9a825;
+$yellowTextColor: $black;
+$yellowSecondaryTextColor: #fbc02d;
+
+.quote-card {
+	background: $default;
+	color: $defaultTextColor;
+	border-radius: $border-radius;
+
+	padding: 20px;
+	padding-left: 50px;
+	box-sizing: border-box;
+	box-shadow: 0 2px 4px rgba($black, 0.12);
+
+	position: relative;
+	overflow: hidden;
+	min-height: 120px;
+
+	p {
+		font-size: 22px;
+		line-height: 1.5;
+		margin: 0;
+		max-width: 80%;
+	}
+
+	cite {
+		font-size: 16px;
+		margin-top: 10px;
+		display: block;
+		font-weight: 400;
+		opacity: 0.8;
+	}
+
+	&:before {
+		content: "“";
+		font-family: Georgia, serif;
+		position: absolute;
+		top: -5px;
+		left: 10px;
+		font-size: 5em;
+		font-weight: normal;
+	}
+
+	&:after {
+		font-family: Georgia, serif;
+		content: "”";
+		position: absolute;
+		bottom: -110px;
+		line-height: 100px;
+		right: -22px;
+		font-size: 20em;
+		font-weight: normal;
+		@media (min-width: 600px) {
+			font-size: 25em;
+			right: -28px;
+			bottom: -115px;
+		}
+	}
+	&.yellow-card {
+		background: $yellow;
+		color: $yellowTextColor;
+		box-shadow: 0 1px 2px rgba($black, 0.12), 0 2px 4px rgba($black, 0.24);
+
+		&:before,
+		&:after {
+			color: $yellowSecondaryTextColor;
+		}
+	}
+}
