@@ -1,0 +1,138 @@
+@use "abstracts" as *;
+@use "base" as *;
+@use "components" as *;
+
+// Main Portfolio Page
+
+#about main {
+	padding: 8px 24px;
+	@include breakpoint("mobile-plus") {
+		padding: 24px 42px 0px;
+	}
+	@include breakpoint("tablet") {
+		padding: 24px 74px 0px;
+	}
+	@include breakpoint("tablet") {
+		padding: 24px 74px 0px;
+	}
+	@include breakpoint("laptop") {
+		padding: 42px 74px 0px;
+	}
+	@include breakpoint("desktop") {
+		padding: 52px 74px 0px;
+	}
+}
+
+.about-wrapper {
+	max-width: 1280px;
+	margin: auto;
+	.title-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 32px;
+		@include breakpoint("tablet") {
+			margin-bottom: 42px;
+		}
+		.pageTitle {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			h1 {
+				font-family: "Montserrat", sans-serif;
+				font-size: 36px;
+				line-height: 44px;
+				font-weight: 900;
+				color: $white;
+				margin: 0;
+				white-space: nowrap;
+				&.highlight {
+					color: $yellow;
+					display: block;
+				}
+				@include breakpoint("mobile-plus") {
+					font-size: 42px;
+					line-height: 52px;
+				}
+				@include breakpoint("tablet") {
+					font-size: 56px;
+					line-height: 68px;
+				}
+				@include breakpoint("laptop") {
+					font-size: 56px;
+					line-height: 68px;
+				}
+				@include breakpoint("large-desktop") {
+					font-size: 56px;
+					line-height: 68px;
+				}
+			}
+		}
+
+		.portrait-wrapper {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			// margin-left: 32px;
+			.portrait {
+				display: none;
+				border-radius: 8px;
+				height: 100%;
+				object-fit: cover;
+				@include breakpoint("mobile-plus") {
+					display: block;
+					max-width: 104px;
+				}
+				@include breakpoint("tablet") {
+					max-width: 136px;
+				}
+			}
+		}
+	}
+
+	.about-content-wrapper {
+		display: flex;
+		flex-direction: column;
+		column-count: 2;
+
+		// .image {
+		// 	flex-grow: 1;
+		// 	flex-shrink: 0; /* Prevent the image from shrinking */
+		// 	max-width: 100%;
+		// 	max-height: 100%;
+		// 	margin-right: 10px; /* Adjust spacing as needed */
+		// }
+
+		.content {
+			flex-grow: 1;
+			@include breakpoint("laptop") {
+				column-count: 2;
+				column-gap: 42px;
+			}
+			margin-bottom: 64px;
+			p {
+				padding-bottom: 16px;
+				max-width: 680px;
+				@include breakpoint("mobile-plus") {
+					font-size: 21px;
+					line-height: 32px;
+				}
+				a {
+					color: $blue;
+					font-size: 21px;
+					font-weight: bold;
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			.image {
+				width: 100%;
+				margin-top: 24px;
+				border-radius: 8px;
+			}
+		}
+	}
+}
