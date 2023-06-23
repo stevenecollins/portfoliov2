@@ -73,7 +73,11 @@
 		padding: 8px 0px 42px;
 		max-width: 840px;
 	}
-
+	.image-rounded-corners {
+		margin: 0px auto 42px;
+		max-width: 840px;
+		border-radius: 20px;
+	}
 	.low-fidelity-image {
 		margin: 0px auto;
 		padding: 8px 0px 42px;
@@ -88,5 +92,9 @@
 	}
 	.last-item {
 		margin-bottom: 74px;
+	}
+	h2 {
+		font-weight: 600;
+		margin-bottom: 5px;
 	}
 }
